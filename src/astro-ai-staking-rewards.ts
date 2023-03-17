@@ -17,7 +17,7 @@ export function handleClaimed(event: ClaimedEvent): void {
   let entity = new Claimed(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
-  entity.id = event.params.id
+  entity.claimedId = event.params.id
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
@@ -43,7 +43,7 @@ export function handleNewStaking(event: NewStakingEvent): void {
   let entity = new NewStaking(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
-  entity.id = event.params.id
+  entity.newStakingId = event.params.id
   entity.stakinger = event.params.stakinger
 
   entity.blockNumber = event.block.number
