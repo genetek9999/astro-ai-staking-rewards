@@ -1,0 +1,18 @@
+{
+  "name": "astro-ai-staking-rewards",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ genetek9999/astro-ai-staking-rewards",
+    "create-local": "graph create --node http://localhost:8020/ genetek9999/astro-ai-staking-rewards",
+    "remove-local": "graph remove --node http://localhost:8020/ genetek9999/astro-ai-staking-rewards",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 genetek9999/astro-ai-staking-rewards",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.42.4",
+    "@graphprotocol/graph-ts": "0.29.1"
+  },
+  "devDependencies": { "matchstick-as": "0.5.0" }
+}

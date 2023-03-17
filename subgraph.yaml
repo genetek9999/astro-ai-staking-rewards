@@ -1,0 +1,36 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: AstroAiStakingRewards
+    network: bsc
+    source:
+      address: "0x2765F6c1C506Eb8e374126c3696E38D756D9C4e9"
+      abi: AstroAiStakingRewards
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Claimed
+        - NewStake
+        - NewStaking
+        - OwnershipTransferred
+        - UpdatedStake
+      abis:
+        - name: AstroAiStakingRewards
+          file: ./abis/AstroAiStakingRewards.json
+      eventHandlers:
+        - event: Claimed(indexed uint256)
+          handler: handleClaimed
+        - event: NewStake(indexed uint256)
+          handler: handleNewStake
+        - event: NewStaking(indexed uint256,indexed address)
+          handler: handleNewStaking
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: UpdatedStake(indexed uint256)
+          handler: handleUpdatedStake
+      file: ./src/astro-ai-staking-rewards.ts

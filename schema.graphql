@@ -1,0 +1,41 @@
+type Claimed @entity(immutable: true) {
+  id: Bytes!
+  id: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewStake @entity(immutable: true) {
+  id: Bytes!
+  stakeId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type NewStaking @entity(immutable: true) {
+  id: Bytes!
+  id: BigInt! # uint256
+  stakinger: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdatedStake @entity(immutable: true) {
+  id: Bytes!
+  stakeId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
